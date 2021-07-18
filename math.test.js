@@ -1,5 +1,5 @@
 const { sum, mul, sub, div } = require("./math")
-const mathjs = require('./math')
+const mathjs = require('mathjs')
 
 describe('Adding',()=>{
     test("Adding 1 + 1 equals 2", () => {

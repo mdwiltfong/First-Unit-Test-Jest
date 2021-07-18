@@ -1,11 +1,10 @@
 module.exports = {
-    log: jest.fn(() => 'spam')
-}
+    log: jest.fn(() => 'test')
+  }
 
-const mathjs = require('mathjs')
+  const mathjs = require('../math')
 
 test(`The mathjs log function`, () => {
-  console.log(`spam`)
   const result = mathjs.log(10000, 10)
   expect(result).toBe('test')
   expect(mathjs.log).toHaveBeenCalled()

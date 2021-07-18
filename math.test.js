@@ -21,7 +21,7 @@ describe('Dividing',()=>{
         expect(div(1, 1)).toBe(1)
       })
 })
-/*
+
 describe(`Math.js using spy packages`,()=>{
     test(`The mathjs log function`, () => {
         const spy = jest.spyOn(mathjs, 'log')
@@ -31,7 +31,7 @@ describe(`Math.js using spy packages`,()=>{
         expect(mathjs.log).toHaveBeenCalledWith(10000, 10)
       })
 
-}) */
+}) 
 
 
 

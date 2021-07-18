@@ -1,5 +1,5 @@
-const { sum, mul, sub, div } = require("./math")
-const mathjs = require('mathjs')
+const { sum, mul, sub, div,mathjs } = require("./math")
+
 
 describe('Adding',()=>{
     test("Adding 1 + 1 equals 2", () => {
@@ -24,7 +24,7 @@ describe('Dividing',()=>{
 
 describe(`Math.js using spy packages`,()=>{
     test(`The mathjs log function`, () => {
-        const spy = jest.spyOn(mathjs, 'log')
+        const spy = jest.spyOn(mathjs, `log`)
         const result = mathjs.log(10000, 10)
       
         expect(mathjs.log).toHaveBeenCalled()

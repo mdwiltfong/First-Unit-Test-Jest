@@ -1,6 +1,6 @@
-const { sum, mul, sub, div,mathjs } = require("./math")
-
-
+const { sum, mul, sub, div} = require("./math")
+let mathjs=require('mathjs')
+console.log(mathjs.log(1000,10))
 describe('Adding',()=>{
     test("Adding 1 + 1 equals 2", () => {
         expect(sum(1, 1)).toBe(2)
@@ -23,14 +23,20 @@ describe('Dividing',()=>{
 })
 
 describe(`Math.js using spy packages`,()=>{
-    test(`The mathjs log function`, () => {
-        const spy = jest.spyOn(mathjs, `log`)
-        const result = mathjs.log(10000, 10)
-      
-        expect(mathjs.log).toHaveBeenCalled()
-        expect(mathjs.log).toHaveBeenCalledWith(10000, 10)
-      })
-
+  test(`The mathjs log function`, () => {
+    const spy = jest.spyOn(mathjs, 'log')
+    const result = mathjs.log(10000, 10)
+  
+    expect(mathjs.log).toHaveBeenCalled()
+    expect(mathjs.log).toHaveBeenCalledWith(10000, 10)
+  })
+  mathjs.log = jest.fn(() => 'test')
+  test(`The mathjs log function`, () => {
+    const result = mathjs.log(10000, 10)
+    expect(result).toBe('test')
+    expect(mathjs.log).toHaveBeenCalled()
+    expect(mathjs.log).toHaveBeenCalledWith(10000, 10)
+  })
 }) 
 
 
